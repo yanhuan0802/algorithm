@@ -3,6 +3,8 @@ package com.yanhuan.sort.quick;
 /**
  * 快速排序
  *
+ * 快速排序的本质就是把基准数大的都放在基准数的右边,把比基准数小的放在基准数的左边,这样就找到了该数据在数组中的正确位置.
+ *
  * @author Yan
  */
 public class QuickSort {
