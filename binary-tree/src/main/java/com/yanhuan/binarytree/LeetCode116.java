@@ -46,7 +46,7 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect(Node root) {
+    public Node connect2(Node root) {
         if (root == null) {
             return null;
         }
@@ -83,5 +83,85 @@ public class LeetCode116 {
 
         // 返回根节点
         return root;
+    }
+
+    /**
+     * 解法3
+     *
+     * @param root 树
+     * @return 填充后的结果
+     */
+    public Node connect3(Node root) {
+        if (root == null) {
+            return null;
+        }
+        //从根节点开始
+        Node leftmost = root;
+        while (leftmost.next != null) {
+            // 遍历这一层节点组织成的链表，为下一层的节点更新 next 指针
+            Node head = leftmost;
+            while (head != null) {
+                //连接1
+                head.left.next = head.right;
+
+                //连接2
+                if (head.next != null) {
+                    head.right.next = head.next.left;
+                }
+                //指针向后移动
+                head = head.next;
+            }
+            //去下一层最左的节点
+            leftmost = leftmost.left;
+        }
+        return root;
+    }
+
+    /**
+     * 解法4
+     *
+     * @param root 树
+     * @return 填充后的结果
+     */
+    public Node connect4(Node root) {
+        dfs(root);
+        return root;
+    }
+
+    void dfs(Node root) {
+        if (root == null) {
+            return;
+        }
+        Node left = root.left;
+        Node right = root.right;
+        //以root为起点，将整个纵深这段串联起来
+        while (left != null) {
+            left.next = right;
+            left = left.right;
+            right = right.left;
+        }
+        //递归的调用左右节点，完成同样的纵深串联
+        dfs(root.left);
+        dfs(root.right);
+    }
+
+    /**
+     * 解法5（精妙）
+     *
+     * @param root 树
+     * @return 填充后的结果
+     */
+    public Node connect5(Node root) {
+        dfs(root, null);
+        return root;
+    }
+
+    private void dfs(Node curr, Node next) {
+        if (curr == null) {
+            return;
+        }
+        curr.next = next;
+        dfs(curr.left, curr.right);
+        dfs(curr.right, curr.next == null ? null : curr.next.left);
     }
 }
