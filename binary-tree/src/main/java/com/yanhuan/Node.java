@@ -1,4 +1,4 @@
-package com.yanhuan.binarytree;
+package com.yanhuan;
 
 import lombok.Data;
 
@@ -10,8 +10,8 @@ import lombok.Data;
  */
 @Data
 public class Node {
-    int val;
-    Node left;
-    Node right;
-    Node next;
+    public int val;
+    public Node left;
+    public Node right;
+    public Node next;
 }

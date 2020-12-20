@@ -1,5 +1,7 @@
 package com.yanhuan.binarytree;
 
+import com.yanhuan.TreeNode;
+
 import java.util.HashMap;
 import java.util.Map;
 

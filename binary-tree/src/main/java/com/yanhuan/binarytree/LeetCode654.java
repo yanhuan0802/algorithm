@@ -1,5 +1,7 @@
 package com.yanhuan.binarytree;
 
+import com.yanhuan.TreeNode;
+
 /**
  * 构造最大二叉树
  * <p>

@@ -1,5 +1,7 @@
 package com.yanhuan.binarytree;
 
+import com.yanhuan.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
