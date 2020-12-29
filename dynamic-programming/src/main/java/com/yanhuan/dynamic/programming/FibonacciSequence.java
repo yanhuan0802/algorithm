@@ -55,6 +55,7 @@ public class FibonacciSequence {
     /**
      * 解法3：dp数组的迭代解法（自底向上）
      * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      *
      * @param n 序号
      * @return 值
@@ -72,5 +73,29 @@ public class FibonacciSequence {
             dp[i] = dp[i - 1] + dp[i - 2];
         }
         return dp[n];
+    }
+
+    /**
+     * 解法3：不申请数组，使用中建变量存储
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     *
+     * @param n 序号
+     * @return 值
+     */
+    int fib4(int n) {
+        if (n < 1) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        int prev = 1, curr = 1;
+        for (int i = 3; i <= n; i++) {
+            int sum = prev + curr;
+            prev = curr;
+            curr = sum;
+        }
+        return curr;
     }
 }
