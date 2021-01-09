@@ -33,7 +33,7 @@ public class LeetCode15 {
             if (nums[i] > 0) {
                 return lists;
             }
-            //跳过重复元素
+            //跳过重复元素  这里要注意  是前一个计算过了  跳过后一个
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
