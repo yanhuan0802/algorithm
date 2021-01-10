@@ -1,6 +1,6 @@
 package com.yanhuan.binarytree;
 
-import com.yanhuan.Node;
+import com.yanhuan.ListNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,7 +18,7 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect1(Node root) {
+    public ListNode connect1(ListNode root) {
         if (root == null) {
             return null;
         }
@@ -26,7 +26,7 @@ public class LeetCode116 {
         return root;
     }
 
-    private void connectTwoNode(Node left, Node right) {
+    private void connectTwoNode(ListNode left, ListNode right) {
         if (left == null || right == null) {
             return;
         }
@@ -48,12 +48,12 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect2(Node root) {
+    public ListNode connect2(ListNode root) {
         if (root == null) {
             return null;
         }
         // 初始化队列同时将第一层节点加入队列中，即根节点
-        Queue<Node> queue = new LinkedList<>();
+        Queue<ListNode> queue = new LinkedList<>();
         queue.add(root);
 
         // 外层的 while 循环迭代的是层数
@@ -66,19 +66,19 @@ public class LeetCode116 {
             for (int i = 0; i < size; i++) {
 
                 // 从队首取出元素
-                Node node = queue.poll();
+                ListNode listNode = queue.poll();
 
                 // 连接
                 if (i < size - 1) {
-                    node.next = queue.peek();
+                    listNode.next = queue.peek();
                 }
 
                 // 拓展下一层节点
-                if (node.left != null) {
-                    queue.add(node.left);
+                if (listNode.left != null) {
+                    queue.add(listNode.left);
                 }
-                if (node.right != null) {
-                    queue.add(node.right);
+                if (listNode.right != null) {
+                    queue.add(listNode.right);
                 }
             }
         }
@@ -93,15 +93,15 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect3(Node root) {
+    public ListNode connect3(ListNode root) {
         if (root == null) {
             return null;
         }
         //从根节点开始
-        Node leftmost = root;
+        ListNode leftmost = root;
         while (leftmost.next != null) {
             // 遍历这一层节点组织成的链表，为下一层的节点更新 next 指针
-            Node head = leftmost;
+            ListNode head = leftmost;
             while (head != null) {
                 //连接1
                 head.left.next = head.right;
@@ -125,17 +125,17 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect4(Node root) {
+    public ListNode connect4(ListNode root) {
         dfs(root);
         return root;
     }
 
-    void dfs(Node root) {
+    void dfs(ListNode root) {
         if (root == null) {
             return;
         }
-        Node left = root.left;
-        Node right = root.right;
+        ListNode left = root.left;
+        ListNode right = root.right;
         //以root为起点，将整个纵深这段串联起来
         while (left != null) {
             left.next = right;
@@ -153,12 +153,12 @@ public class LeetCode116 {
      * @param root 树
      * @return 填充后的结果
      */
-    public Node connect5(Node root) {
+    public ListNode connect5(ListNode root) {
         dfs(root, null);
         return root;
     }
 
-    private void dfs(Node curr, Node next) {
+    private void dfs(ListNode curr, ListNode next) {
         if (curr == null) {
             return;
         }

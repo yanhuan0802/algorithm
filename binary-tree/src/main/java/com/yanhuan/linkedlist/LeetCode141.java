@@ -1,6 +1,6 @@
 package com.yanhuan.linkedlist;
 
-import com.yanhuan.Node;
+import com.yanhuan.ListNode;
 
 /**
  * 环形链表
@@ -16,12 +16,12 @@ public class LeetCode141 {
      * @param head 链表
      * @return 是否环形链表
      */
-    public boolean hasCycle(Node head) {
+    public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
-        Node slow = head;
-        Node fast = head.next;
+        ListNode slow = head;
+        ListNode fast = head.next;
         while (slow != fast) {
             if (fast == null || fast.next == null) {
                 return false;
