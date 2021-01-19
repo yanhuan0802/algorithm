@@ -46,7 +46,7 @@ public class LeetCode24 {
             ListNode start = tmp.next;
             ListNode end = tmp.next.next;
             //交换节点
-            //tmp指向第二个节点
+            //前序节点指向第二个节点
             tmp.next = end;
             //第一个节点指向 第二个节点的next节点
             start.next = end.next;
