@@ -35,7 +35,8 @@ public class LeetCode25 {
                 curr = head;
                 head = tmp;
             }
+            head = curr;
         }
-        return curr;
+        return head;
     }
 }
