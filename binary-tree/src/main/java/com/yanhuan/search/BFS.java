@@ -7,14 +7,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 广度优先搜索
+ * 广度优先搜索 模板
  *
  * @author YanHuan
  * @date 2021-01-20 23:24
  */
 public class BFS {
 
-
+    /**
+     * 广度优先
+     *
+     * @param root 树
+     * @return 结果
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> allResults = new ArrayList<>();
         if (root == null) {
