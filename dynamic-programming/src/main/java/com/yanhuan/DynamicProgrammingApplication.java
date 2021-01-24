@@ -1,10 +1,10 @@
-package com.yanhuan.dynamic.programming;
+package com.yanhuan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 动态规划
+ * 动态规划  贪心算法
  *
  * @author Yan
  */
