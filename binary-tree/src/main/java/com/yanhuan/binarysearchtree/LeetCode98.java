@@ -16,6 +16,9 @@ public class LeetCode98 {
 
     /**
      * 限定以 root 为根的子树节点必须满足 max.val > root.val > min.val
+     * <p>
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      *
      * @param root 树
      * @param min  子树节点
