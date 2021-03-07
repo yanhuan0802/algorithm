@@ -1,4 +1,4 @@
-package com.yanhuan.dynamic.programming;
+package com.yanhuan.dp;
 
 /**
  * 爬楼梯问题

@@ -1,4 +1,4 @@
-package com.yanhuan.dynamic.programming;
+package com.yanhuan.dp;
 
 /**
  * 打家劫舍2
