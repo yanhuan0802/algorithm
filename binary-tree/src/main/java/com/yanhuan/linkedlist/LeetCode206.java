@@ -3,7 +3,7 @@ package com.yanhuan.linkedlist;
 import com.yanhuan.ListNode;
 
 /**
- * 翻转链表
+ * 反转链表
  *
  * @author YanHuan
  * @date 2021-01-09 16:20
